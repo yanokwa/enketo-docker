@@ -38,12 +38,3 @@ services:
 volumes:
   enketo_redis_main:
   enketo_redis_cache:
-
-# todo
-# encryption key, api key in config.json.template file should be unique and stable
-# support email should be configurable
-# now to configure nginx
-
-# questions
-# why does central write outside the docker folder?
-# can't seem to load translations. maybe because of build env?
