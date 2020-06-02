@@ -1,0 +1,86 @@
+{
+    "app name": "Enketo",
+    "port": "8005",
+    "offline enabled": true,
+    "id length": 8,
+    "linked form and data server": {
+        "name": "ODK Central",
+        "server url": "kf.kobotoolbox.org",
+        "api key": "enketorules",
+        "legacy formhub": false,
+        "authentication": {
+            "type": "basic",
+            "allow insecure transport": "false"
+        }
+    },
+    "ip filtering" : {
+        "allowPrivateIPAddress": false,
+        "allowMetaIPAddress": false,
+        "allowIPAddressList": [],
+        "denyIPAddressList": []
+    },
+    "timeout": 300000,
+    "expiry for record cache": 30000,
+    "encryption key": "s0m3v3rys3cr3tk3y",
+    "less secure encryption key": "this $3cr3t key is crackable",
+    "default theme": "kobo",
+    "themes supported": [],
+    "base path": "",
+    "log": {
+        "submissions": false
+    },
+    "support": {
+        "email": "support@example.org"
+    },
+    "widgets": [
+        "note", "select-desktop", "select-mobile", "autocomplete", "geo", "textarea", "url",
+        "table", "radio", "date", "time", "datetime", "select-media", "file", "draw", "rank",
+        "likert", "range", "columns", "image-view", "comment", "image-map", "date-native", "date-native-ios",
+        "date-mobile", "text-max", "text-print", "rating", "thousands-sep"
+    ],
+    "analytics": "google",
+    "google": {
+        "analytics": {
+            "ua": "",
+            "domain": ""
+        },
+        "api key": ""
+    },
+    "piwik": {
+        "analytics": {
+            "tracker url": "",
+            "site id": ""
+        }
+    },
+    "headless": {
+        "timeout": 60000
+    },
+    "maps": [ {
+        "name": "streets",
+        "tiles": [ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" ],
+        "attribution": "© <a href=\"http://openstreetmap.org\">OpenStreetMap</a> | <a href=\"www.openstreetmap.org/copyright\">Terms</a>"
+    } ],
+    "query parameter to pass to submission": "",
+    "redis": {
+        "main": {
+            "host": "enketo_redis_main",
+            "port": "6379",
+            "password": null
+        },
+        "cache": {
+            "host": "enketo_redis_cache",
+            "port": "6380",
+            "password": null
+        }
+    },
+    "logo": {
+        "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=",
+        "href": ""
+    },
+    "disable save as draft": false,
+    "repeat ordinals": false,
+    "validate continuously": false,
+    "validate page": true,
+    "payload limit": "100kb",
+    "text field character limit": 2000
+}

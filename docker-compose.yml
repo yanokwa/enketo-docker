@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+
+  enketo_express:
+    container_name: enketo_express
+    build:
+      context: .
+      dockerfile: enketo.dockerfile
+    restart: unless-stopped
+    depends_on:
+      # register the following containers as hostname
+      - enketo_redis_main
+      - enketo_redis_cache
+
+  enketo_redis_main:
+    image: redis:5
+    container_name: enketo_redis_main
+    volumes:
+      - ./files/enketo/redis-enketo-main.conf:/usr/local/etc/redis/redis.conf:ro
+      - enketo_redis_main:/data
+    command: 
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+
+  enketo_redis_cache:
+    image: redis:5
+    container_name: enketo_redis_cache
+    volumes:
+      - ./files/enketo/redis-enketo-cache.conf:/usr/local/etc/redis/redis.conf:ro
+      - enketo_redis_cache:/data
+    command: 
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+    restart: unless-stopped
+
+volumes:
+  enketo_redis_main:
+  enketo_redis_cache:
+
+# todo
+# encryption key, api key in config.json.template file should be unique and stable
+# support email should be configurable
+# now to configure nginx
+
+# questions
+# why does central write outside the docker folder?
+# can't seem to load translations. maybe because of build env?
