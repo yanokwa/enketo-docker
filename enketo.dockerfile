@@ -6,8 +6,11 @@ WORKDIR ${ENKETO_SRC_DIR}
 
 COPY files/enketo/config.json.template ${ENKETO_SRC_DIR}/config/config.json
 
+RUN grunt
+
 RUN npm install --production
 
 EXPOSE 8005
 
 CMD ["pm2", "start", "--no-daemon", "app.js", "-n", "enketo"]
+

@@ -20,7 +20,6 @@ docker exec -it enketo_express /bin/sh
 * support email should be configurable. maybe some other things should be too?
 
 # questions
-* can't seem to load translations. usually happens because of build failure? or no restart?
 * why does central write outside the docker folder?
 
 # docker reset
